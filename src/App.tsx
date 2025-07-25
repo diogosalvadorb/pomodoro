@@ -1,8 +1,9 @@
 import './styles/theme.css';
 import './styles/global.css';
-import { Heading } from './components/Heading/Index';
 import { Container } from './components/Container/Index';
 import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
+import { CountDown } from './components/CountDown';
 
 export function App() {
   return (
@@ -12,7 +13,11 @@ export function App() {
       </Container>
 
       <Container>
-        <Heading>Menu</Heading>
+        <Menu/>
+      </Container>
+
+      <Container>
+        <CountDown/>
       </Container>
     </>
   ); 
