@@ -1,17 +1,17 @@
-import { TrashIcon } from "lucide-react";
-import { Container } from "../../components/Container/Index";
-import { DefaultButton } from "../../components/DefaultButton";
-import { Heading } from "../../components/Heading/Index";
-import { MainTemplate } from "../../templates/MainTemplate";
+import { TrashIcon } from 'lucide-react';
+import { Container } from '../../components/Container/Index';
+import { DefaultButton } from '../../components/DefaultButton';
+import { Heading } from '../../components/Heading/Index';
+import { MainTemplate } from '../../templates/MainTemplate';
 
 import styles from './styles.module.css';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
-import { formatDate } from "../../utils/formatDate";
-import { getTaskStatus } from "../../utils/getTaskStatus";
-import { sortTasks, type SortTasksOptions } from "../../utils/sortTasks";
-import { useEffect, useState } from "react";
-import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
-import { showMessage } from "../../adapters/showMessage";
+import { formatDate } from '../../utils/formatDate';
+import { getTaskStatus } from '../../utils/getTaskStatus';
+import { sortTasks, type SortTasksOptions } from '../../utils/sortTasks';
+import { useEffect, useState } from 'react';
+import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
+import { showMessage } from '../../adapters/showMessage';
 
 export function History() {
   const { state, dispatch } = useTaskContext();
@@ -38,6 +38,10 @@ export function History() {
       }),
     }));
   }, [state.tasks]);
+
+  useEffect(() => {
+    document.title = 'Histórico - Chronos Pomodoro';
+  }, []);
 
   useEffect(() => {
     if (!confirmClearHistory) return;
